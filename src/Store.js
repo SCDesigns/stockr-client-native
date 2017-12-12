@@ -1,4 +1,3 @@
-
 import { Platform } from 'react-native';
 import {
     createStore,
@@ -10,12 +9,12 @@ import promise from 'redux-promise';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-import RootReducer from './Reducers';
+import rootReducer from './Reducers';
 
-const middleware = applyMiddleware(thunk, promise, logger);
+const middleware = applyMiddleware(promise, thunk);
 
 const Store = createStore(
-    RootReducer,
+    rootReducer,
     compose(
         middleware,
         devTools({
@@ -25,5 +24,7 @@ const Store = createStore(
         }),
     )
 );
+
+
 
 export default Store;
