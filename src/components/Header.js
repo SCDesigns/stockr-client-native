@@ -1,11 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
+
+import logo from './../Assets/img/stockr.svg'
 
 const Header = () => {
     return (
         <View style={headerContainer}>
             <Text style={header}>
-                Stockr - Crypto Tracker
+              <Image
+                  style={styles.image}
+                  source={logo}
+                  alt="Stockr: Crypto Tracker"
+              />
             </Text>
         </View>
     )
@@ -25,6 +31,9 @@ const styles = StyleSheet.create({
         color: "#E7E5D3",
         paddingTop: 20,
         paddingBottom: 20,
+    },
+    image: {
+      width: 105,
     }
 })
 
