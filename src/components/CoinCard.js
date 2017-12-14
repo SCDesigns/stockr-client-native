@@ -1,5 +1,5 @@
 import React from 'react';
-import { 
+import {
     View,
     Text,
     StyleSheet,
@@ -7,67 +7,77 @@ import {
 } from 'react-native';
 import { images } from '../Utils/CoinIcons';
 
+let iconSize = 40;
+
 const styles = StyleSheet.create({
     container: {
         display: "flex",
         marginBottom: 20,
-        borderBottomColor: "#e5e5e5",
-        borderBottomWidth: 3,
-        padding: 20
+        borderBottomColor: "#E0E0E0",
+        borderBottomWidth: 5,
+        paddingTop: 10,
+        paddingLeft: 20,
+        paddingRight: 20
     },
     upperRow: {
         display: "flex",
+        flex: 1,
         flexDirection: "row",
+        justifyContent: 'center',
+        alignItems: 'center',
         marginBottom: 15
     },
     coinSymbol: {
         marginTop: 10,
-        marginLeft: 20,
-        marginRight: 5,
-        fontWeight: "bold",        
+        marginLeft: 10,
+        fontSize: 20,
+        fontWeight: "bold",
     },
     coinName: {
-        marginTop: 10,
-        marginLeft: 5,
-        marginRight: 20
-    },
-    seperator: {
-        marginTop: 10,
+        fontSize: 20,
+        marginBottom: 5
     },
     coinPrice: {
-        marginTop: 10,
-        marginLeft: "auto",
-        marginRight: 10,
-        fontWeight: "bold",        
+        fontWeight: "bold",
+        fontSize: 20
+    },
+    namePrice: {
+      flex: 1,
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'flex-end',
     },
     image: {
-        width: 35,
-        height: 35,
+        width: iconSize,
+        height: iconSize,
+        borderRadius: iconSize / 2, //make this a circle
+        marginTop: 10
     },
     moneySymbol: {
         fontWeight: "bold",
+        fontSize: 20
     },
     statisticsContainer: {
         display: "flex",
-        borderTopColor: "#FAFAFA",
+        borderTopColor: "#F5F5F5",
         borderTopWidth: 2,
-        padding: 10,
+        padding: 15,
         flexDirection: "row",
         justifyContent: "space-around"
     },
     percentChangePlus: {
-        color: "#00BFA5",
+        backgroundColor: "#00E676",
         fontWeight: "bold",
         marginLeft: 5
     },
     percentChangeMinus: {
-        color: "#DD2C00",
+        backgroundColor: "#FF5252",
         fontWeight: "bold",
         marginLeft: 5
     }
 })
 
-const { 
+const {
     container,
     image,
     moneySymbol,
@@ -75,29 +85,30 @@ const {
     coinSymbol,
     coinName,
     coinPrice,
+    namePrice,
     statisticsContainer,
-    seperator,
     percentChangePlus,
     percentChangeMinus
 } = styles;
 
-const CoinCard = ({ symbol, coin_name, price_usd, percent_change_24h, percent_change_7d }) => {
- 
-    
+const CoinCard = ({ symbol, coin_name, price_usd, ticker, percent_change_24h, percent_change_7d }) => {
+
+
     return (
         <View style={container}>
 
             <View style={upperRow}>
-                <Image
-                    style={styles.image}
-                    source={{ uri: images[symbol] }}
-                />
-                <Text style={coinSymbol}>{symbol}</Text>
-                <Text style={seperator}>|</Text>
+              <Image
+                style={styles.image}
+                source={{ uri: images[symbol] }}
+              />
+              <Text style={coinSymbol}>{symbol}</Text>
+              <View style={namePrice}>
                 <Text style={coinName}>{coin_name}</Text>
-                <Text style={coinPrice}>{price_usd}
-                    <Text style={moneySymbol}> $ </Text>
+                <Text style={moneySymbol}> $
+                  <Text style={coinPrice}>{price_usd}</Text>
                 </Text>
+              </View>
             </View>
 
             <View style={statisticsContainer}>
@@ -111,7 +122,7 @@ const CoinCard = ({ symbol, coin_name, price_usd, percent_change_24h, percent_ch
 
             </View>
 
-        </View> 
+        </View>
     );
 }
 

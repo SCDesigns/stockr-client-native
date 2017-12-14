@@ -34,13 +34,13 @@ const styles = StyleSheet.create({
         display: "flex",
         marginTop: 55,
         alignItems: "center",
-        backgroundColor: "#000",
+        backgroundColor: "#00E676"
     },
     header: {
-        marginTop: 10,
-        marginBottom: 10,
-        width: 130,
-        height: 30,
+        marginTop: 20,
+        marginBottom: 20,
+        width: 150,
+        height: 35,
     }
 })
 
