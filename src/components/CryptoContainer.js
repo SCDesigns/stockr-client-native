@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { View, Text, ScrollView } from 'react-native';
-import Spinner from ‘react-native-loading-spinner-overlay';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import Spinner from 'react-native-loading-spinner-overlay';
 
 import FetchCoinData from './../Actions/FetchCoinData';
-import Card from './Card'
+import CoinCard from './CoinCard';
 
+class CryptoContainer extends Component {
 
-class CurrencyContainer extends Component {
-
-    componentDidMount() {
+    componentWillMount() {
         this.props.FetchCoinData();
     }
 
     renderCoinCards() {
-        const { currency } = this.props;
-        return currency.data.map((coin, index) =>
+        const { crypto } = this.props;
+        return crypto.data.map((coin, index) =>
             <CoinCard
                 key={index}
                 coin_name={coin.name}
@@ -30,14 +29,14 @@ class CurrencyContainer extends Component {
 
     render() {
 
-        const { currency } = this.props;
+        const { crypto } = this.props;
         const { contentContainer } = styles;
 
-        if (currency.isFetching) {
+        if (crypto.isFetching) {
             return (
                 <View>
                     <Spinner
-                        visible={currency.isFetching}
+                        visible={crypto.isFetching}
                         textContent={"Loading..."}
                         textStyle={{color: '#253145'}}
                         animation="fade"
@@ -59,14 +58,13 @@ class CurrencyContainer extends Component {
 const styles = {
     contentContainer: {
         paddingBottom: 100,
-        paddingTop: 55
     }
 }
 
 function mapStateToProps(state) {
     return {
-        currency: state.currency
+        crypto: state.crypto
     }
 }
 
-export default connect(mapStateToProps, { FetchCoinData })(CurrencyContainer)
+export default connect(mapStateToProps, { FetchCoinData })(CryptoContainer)

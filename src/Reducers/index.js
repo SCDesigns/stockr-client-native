@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import StockrReducer from './StockrReducer';
+import CryptoReducer from './CryptoReducer';
 
 export default combineReducers({
-  currency: StockrReducer
+    crypto: CryptoReducer
 });

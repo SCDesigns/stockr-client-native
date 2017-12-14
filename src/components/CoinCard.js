@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import { images } from './../Utils/CoinIcons'
-
-const styles = StyleSheet.create({
-
-})
+import { 
+    View,
+    Text,
+    StyleSheet,
+    Image
+} from 'react-native';
+import { images } from '../Utils/CoinIcons';
 
 const styles = StyleSheet.create({
     container: {
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginLeft: 20,
         marginRight: 5,
-        fontWeight: "bold",
+        fontWeight: "bold",        
     },
     coinName: {
         marginTop: 10,
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginLeft: "auto",
         marginRight: 10,
-        fontWeight: "bold",
+        fontWeight: "bold",        
     },
     image: {
         width: 35,
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
     }
 })
 
-const {
+const { 
     container,
     image,
     moneySymbol,
@@ -80,9 +81,9 @@ const {
     percentChangeMinus
 } = styles;
 
-const Card = ({ symbol, coin_name, price_usd, percent_change_24h, percent_change_7d }) => {
-
-
+const CoinCard = ({ symbol, coin_name, price_usd, percent_change_24h, percent_change_7d }) => {
+ 
+    
     return (
         <View style={container}>
 
@@ -110,8 +111,10 @@ const Card = ({ symbol, coin_name, price_usd, percent_change_24h, percent_change
 
             </View>
 
-        </View>
+        </View> 
     );
 }
 
-export default Card;
+
+
+export default CoinCard;
