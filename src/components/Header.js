@@ -32,15 +32,15 @@ const Header = () => {
 const styles = StyleSheet.create({
     headerContainer: {
         display: "flex",
-        marginTop: 55,
+        marginTop: 40,
         alignItems: "center",
         backgroundColor: "#00E676"
     },
     header: {
         marginTop: 20,
         marginBottom: 20,
-        width: 150,
-        height: 35,
+        width: 125,
+        height: 30,
     }
 })
 

@@ -67,13 +67,17 @@ const styles = StyleSheet.create({
     },
     percentChangePlus: {
         backgroundColor: "#00E676",
+        color: "#fff",
         fontWeight: "bold",
-        marginLeft: 5
+        marginLeft: 5,
+        padding: 5
     },
     percentChangeMinus: {
         backgroundColor: "#FF5252",
+        color: "#fff",
         fontWeight: "bold",
-        marginLeft: 5
+        marginLeft: 5,
+        padding: 5
     }
 })
 
@@ -100,7 +104,7 @@ const CoinCard = ({ symbol, coin_name, price_usd, ticker, percent_change_24h, pe
             <View style={upperRow}>
               <Image
                 style={styles.image}
-                source={{ uri: images[symbol] }}
+                source={images[symbol]}
               />
               <Text style={coinSymbol}>{symbol}</Text>
               <View style={namePrice}>
