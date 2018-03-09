@@ -160,7 +160,7 @@ export const images = {
   OMNI: require('../Assets/coins/32/color/omni.png'),
   OST: require('../Assets/coins/32/color/ost.png'),
   OX: require('../Assets/coins/32/color/ox.png'),
-  PAC: require('../Assets/coins/32/color/pac.png'),
+  $PAC: require('../Assets/coins/32/color/pac.png'),
   PART: require('../Assets/coins/32/color/part.png'),
   PASL: require('../Assets/coins/32/color/pasl.png'),
   PAY: require('../Assets/coins/32/color/pay.png'),
