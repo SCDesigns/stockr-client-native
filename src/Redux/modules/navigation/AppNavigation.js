@@ -1,25 +1,29 @@
+
 import React from 'react'
 import { Text, Animated, Easing } from 'react-native'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
-import LoginScreen from '../Containers/LoginScreen'
-import SignupScreen from '../Containers/SignupScreen'
-import ForgottenPasswordScreen from '../Containers/ForgottenPasswordScreen'
-import BrowseCoins from '../Containers/BrowseCoins'
-import MyPortfolio from '../Containers/MyPortfolio'
-import DrawerContainer from '../Containers/DrawerContainer'
+import LoginScreen from '../../../Containers/LoginScreen'
+import SignupScreen from '../../../Containers/SignupScreen'
+import ForgottenPasswordScreen from '../../../Containers/ForgottenPasswordScreen'
+import BrowseCoins from '../../../Containers/BrowseCoins'
+import MyPortfolio from '../../../Containers/MyPortfolio'
+// import Screen3 from '../Containers/Screen3'
+import DrawerContainer from '../../../Containers/DrawerContainer'
 
+// https://github.com/react-community/react-navigation/issues/1254
 const noTransitionConfig = () => ({
   transitionSpec: {
-    duration: 0,
+    duration: 250,
+    easing: Easing.out(Easing.poly(4)),
     timing: Animated.timing,
-    easing: Easing.step0
   }
 })
 
 // drawer stack
 const DrawerStack = DrawerNavigator({
   browseCoins: { screen: BrowseCoins },
-  myPortfolio: { screen: MyPortfolio },
+  MyPortfolio: { screen: MyPortfolio },
+  // screen3: { screen: Screen3 },
 }, {
   gesturesEnabled: false,
   contentComponent: DrawerContainer

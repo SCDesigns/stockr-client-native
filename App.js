@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View, StatusBar } from 'react-native'
 import { Provider } from 'react-redux';
-
-import Store from './src/Store';
+import createStore from './src/Redux'
 import { Header, CryptoContainer } from './src/Components';
 
+const store = createStore()
 
 export default class App extends Component {
   render() {
     return (
-      <Provider store={Store}>
+      <Provider store={store}>
         <View>
-          <Header />
-          <CryptoContainer />
         </View>
       </Provider>
     );
