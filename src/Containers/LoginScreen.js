@@ -1,29 +1,19 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image, Button } from 'react-native'
+
+import Login from './InputText'
 
 export default class LoginScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>I am Login Screen</Text>
+        <Image
+          style={styles.header}
+          source={require('./../Assets/img/stockr.png')}
+        />
 
-        <Text
-          style={styles.linky}
-          onPress={() => this.props.navigation.navigate('signupScreen')} >
-          Go to Signup
-        </Text>
+        <Login />
 
-        <Text
-          style={styles.linky}
-          onPress={() => this.props.navigation.navigate('forgottenPasswordScreen')} >
-          Go to Forgot Password
-        </Text>
-
-        <Text
-          style={styles.linky}
-          onPress={() => this.props.navigation.navigate('drawerStack')} >
-          Pretend we logged in
-        </Text>
       </View>
     )
   }
@@ -32,12 +22,17 @@ export default class LoginScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#00E676',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  linky: {
-    color: 'blue',
-    paddingTop: 10
+  heading: {
+    color: 'white',
+    fontSize: 30,
+  },
+  header: {
+      marginTop: 20,
+      width: 180,
+      height: 40,
   }
 })
