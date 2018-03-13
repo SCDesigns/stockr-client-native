@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, StatusBar } from 'react-native'
+import { AppRegistry } from 'react-native';
 import { Provider } from 'react-redux';
-import createStore from './src/Redux'
-import { Header, CryptoContainer } from './src/Components';
+import { createStore, applyMiddleware } from 'redux';
 
-const store = createStore()
+import rootReducer from './src/Redux/';
+import AppWithNavigationState from './src/Redux/modules/navigation/AppNavigation';
+import { middleware } from './src/Utils/redux';
+
+const store = createStore(
+  rootReducer,
+  applyMiddleware(middleware),
+);
 
 export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <View>
-        </View>
+        <AppWithNavigationState />
       </Provider>
     );
   }
