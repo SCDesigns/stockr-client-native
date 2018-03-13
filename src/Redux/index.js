@@ -1,12 +1,12 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
-import navReducer from '../Reducers/NavReducer';
+import NavReducer from '../Reducers/NavReducer';
 import CryptoReducer from '../Reducers/CryptoReducer';
+import AuthReducer from '../Reducers/AuthReducer';
 
-export default () => {
-  const rootReducer = combineReducers({
-    nav: navReducer,
-    crypto: CryptoReducer
-  })
+const rootReducer = combineReducers({
+  nav: NavReducer,
+  crypto: CryptoReducer,
+  auth: AuthReducer
+});
 
-  return createStore(rootReducer)
-}
+export default rootReducer;
