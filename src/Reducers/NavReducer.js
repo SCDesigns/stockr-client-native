@@ -1,6 +1,6 @@
-import AppNavigation from '../Redux/modules/navigation/AppNavigation'
+import { AppNavigator } from '../Redux/modules/navigation/AppNavigation'
 
-const navReducer = (state, action) => {
-  const newState = AppNavigation.router.getStateForAction(action, state)
-  return newState || state
-}
+export default function(state, action) {
+  const newState = AppNavigator.router.getStateForAction(action, state);
+  return newState || state;
+};
