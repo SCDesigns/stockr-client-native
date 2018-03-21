@@ -24,14 +24,14 @@ class BrowseCoins extends Component {
     renderCoinCards() {
         const { crypto } = this.props;
         return crypto.data.map((coin, index) =>
-            <CoinCard
-                key={index}
-                coin_name={coin.name}
-                symbol={coin.symbol}
-                price_usd={coin.price_usd}
-                percent_change_24h={coin.percent_change_24h}
-                percent_change_7d={coin.percent_change_7d}
-            />
+          <CoinCard
+              key={index}
+              coin_name={coin.name}
+              symbol={coin.symbol}
+              price_usd={coin.price_usd}
+              percent_change_24h={coin.percent_change_24h}
+              percent_change_7d={coin.percent_change_7d}
+          />
         )
     }
 
@@ -43,20 +43,20 @@ class BrowseCoins extends Component {
 
         if (crypto.isFetching) {
             return (
-                <View>
-                    <Spinner
-                        visible={crypto.isFetching}
-                        textContent={"Loading..."}
-                        textStyle={{color: '#253145'}}
-                        animation="fade"
-                    />
-                </View>
+              <View>
+                  <Spinner
+                      visible={crypto.isFetching}
+                      textContent={"Loading..."}
+                      textStyle={{color: '#253145'}}
+                      animation="fade"
+                  />
+              </View>
             )
         }
 
         return (
             <ScrollView contentContainerStyle={contentContainer}>
-                {this.renderCoinCards()}
+              {this.renderCoinCards()}
             </ScrollView>
         )
 
@@ -66,7 +66,7 @@ class BrowseCoins extends Component {
 
 function mapStateToProps(state) {
     return {
-        crypto: state.crypto
+      crypto: state.crypto
     }
 }
 

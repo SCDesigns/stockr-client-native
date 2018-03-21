@@ -41,10 +41,12 @@ export default class Login extends Component {
           <Container>
             <Button
             styles={{button: styles.transparentButton}}
-            // onPress={this.press.bind(this)}
+            // onPress={() =>
+            //   navigate('Profile', { name: 'Jane' })
+            // }
             >
               <View style={styles.inline}>
-                <Icon name="facebook-official" size={30} color="#3B5699" />
+                <Icon name="facebook-official" size={25} color="#3B5699" />
                 <Text style={[styles.buttonBlueText, styles.buttonBigText]}>  Connect </Text>
                 <Text style={styles.buttonBlueText}>with Facebook</Text>
               </View>
@@ -55,14 +57,18 @@ export default class Login extends Component {
               <Button
               label="Sign In"
               styles={{button: styles.primaryButton, label: styles.buttonWhiteText}}
-              // onPress={this.press.bind(this)}
+              onPress={() =>
+                navigate('Profile', { name: 'Jane' })
+              }
               />
             </Container>
             <Container>
               <Button
               label="Sign Up"
               styles={{button: styles.secondaryButton, label: styles.buttonWhiteText}}
-              // onPress={this.press.bind(this)}
+              onPress={() =>
+                navigate('Profile', { name: 'Jane' })
+              }
               />
             </Container>
           </View>
